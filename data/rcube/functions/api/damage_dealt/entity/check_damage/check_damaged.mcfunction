@@ -6,8 +6,8 @@
 # Store health
 execute store result score @s rcube_api.damage_dealt-entity.track.health run data get entity @s Health
 
-# Store initial health
-execute unless entity @s[tag=damage_dealt.entity.check_damage.init] run scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.init = @s rcube_api.damage_dealt-entity.track.health
+# Store max health
+execute if entity @s[tag=!damage_dealt.input.health.max] unless entity @s[tag=damage_dealt.entity.check_damage.init] run scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.init = @s rcube_api.damage_dealt-entity.track.health
 
 # Store health (init)
 execute unless entity @s[tag=damage_dealt.entity.check_damage.init] run scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.pre = @s rcube_api.damage_dealt-entity.track.health

@@ -23,3 +23,5 @@ scoreboard objectives add rcube_api.damage_dealt-entity.UUID3.pre dummy
 
 # Load message
 execute if data storage rcube:api/damage_dealt {load_message:true} run tellraw @a [{"text": "[","color": "dark_gray"},{"text": "RCube API","color": "gray"},{"text": "] ","color": "dark_gray"},{"text": "Module ","color" :"gray"},{"text": "'","color": "green"},{"text": "damage_dealt", "color":"green"},{"text": "' ","color": "green"},{"text": "reloaded.","color": "gray"}]
+execute unless data storage rcube:api/damage_dealt load_message run data merge storage rcube:api/damage_dealt {load_message:true}
+execute unless data storage rcube:api/damage_dealt {installed:true} run data merge storage rcube:api/damage_dealt {installed:true}

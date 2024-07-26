@@ -1,5 +1,5 @@
 # Made by: @rcube.
-# [Desc.]
+# Calculate damage dealt, contribute to player
 #
 # Called By: rcube:api/damage_dealt/check_damaged
 
@@ -16,13 +16,10 @@ execute if entity @s[tag=damage_dealt.input.damage.total] on attacker store resu
 
 # Track damage taken & health lost
 scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.dmgTaken = @s rcube_api.damage_dealt-entity.track.health.pre
-
-# FIXED
-# scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.dmgTaken -= @s rcube_api.damage_dealt-entity.track.health.pre
 scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.dmgTaken -= @s rcube_api.damage_dealt-entity.track.health
+execute if entity @s[tag=damage_dealt.input.health.total.lost] run scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.lost += @s rcube_api.damage_dealt-entity.track.health.dmgTaken
 
 # Contribute damage done to player
-scoreboard players operation @s rcube_api.damage_dealt-entity.track.health.lost += @s rcube_api.damage_dealt-entity.track.health.dmgTaken
 execute on attacker run scoreboard players operation @s rcube_api.damage_dealt-entity.damage = @e[tag=damage_dealt.entity.damaged.temp,limit=1] rcube_api.damage_dealt-entity.track.health.dmgTaken
 execute if entity @s[tag=damage_dealt.input.damage.total] on attacker run scoreboard players operation @s rcube_api.damage_dealt-entity.damage.total += @s rcube_api.damage_dealt-entity.damage
 

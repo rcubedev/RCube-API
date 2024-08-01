@@ -3,6 +3,10 @@
 #
 # Called By: rcube:api/load
 
+# Store versions
+data modify storage rcube:api/core version.this set value "0.6.1"
+data modify storage rcube:api/core version.minecraft set value "1.20.1"
+
 # Data
 scoreboard objectives add rcube_api.damage_dealt-entity.track.health dummy
 scoreboard objectives add rcube_api.damage_dealt-entity.track.health.pre dummy

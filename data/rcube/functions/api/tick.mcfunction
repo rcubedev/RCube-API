@@ -5,3 +5,4 @@
 
 # Tick modules
 function rcube:api/damage_dealt/tick
+function rcube:api/centre_string/tick

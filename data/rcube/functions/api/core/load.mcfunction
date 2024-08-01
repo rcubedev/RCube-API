@@ -3,8 +3,10 @@
 #
 # Called By: rcube:api/load
 
-# Setup custom dimension
-execute in rcube:api/core/commands run forceload add 0 0 0 0 
+# Setup core dimension
+execute in rcube:api/core/commands run forceload add 0 0 0 0
+# Item Data
+execute in rcube:api/core/commands run setblock 0 0 0 yellow_shulker_box
 
 # Load message
 execute unless data storage rcube:api/core load_message run data modify storage rcube:api/core load_message set value true

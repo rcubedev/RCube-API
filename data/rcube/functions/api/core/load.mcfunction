@@ -3,6 +3,10 @@
 #
 # Called By: rcube:api/load
 
+# Store versions
+data modify storage rcube:api/core version.this set value "0.3.0"
+data modify storage rcube:api/core version.minecraft set value "1.20.1"
+
 # Setup core dimension
 execute in rcube:api/core/commands run forceload add 0 0 0 0
 # Item Data

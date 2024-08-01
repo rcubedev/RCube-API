@@ -6,3 +6,4 @@
 # Load modules
 function rcube:api/core/load
 function rcube:api/damage_dealt/load
+function rcube:api/player_name/load

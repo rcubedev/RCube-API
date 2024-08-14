@@ -4,11 +4,11 @@
 # Called By: rcube:api/load
 
 # Store versions
-data modify storage rcube:api/player_name version.this set value "0.2.2"
+data modify storage rcube:api/player_name version.this set value "0.2.3"
 data modify storage rcube:api/player_name version.minecraft set value "1.20.1"
 
 # Data
-scoreboard objectives add rcube_api.player_name-deps dummy
+scoreboard objectives add rcubeAPI_playerName.deps dummy "[rcube:api/player_name] Dependencies"
 
 # Load message
 execute unless data storage rcube:api/player_name private.load_message run data modify storage rcube:api/player_name private.load_message set value true

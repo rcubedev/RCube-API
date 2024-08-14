@@ -8,4 +8,4 @@ function rcube:api/_core/zprivate/load
 function rcube:api/damage_dealt/zprivate/load
 function rcube:api/centre_string/zprivate/load
 function rcube:api/scoreboard_rank/load
-function rcube:api/player_name/load
+function rcube:api/player_name/zprivate/load

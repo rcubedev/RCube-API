@@ -1,11 +1,11 @@
 # Made by: @rcube.
-# Append to array
+# Append to array to centre text
 #
-# Called By: rcube:api/centre_text/centre
+# Called By: rcube:api/centre_text/run
 
-data modify storage rcube:api/centre_string output append value {array:'{"text":"\\u200c","bold":true}'}
+data modify storage rcube:api/centre_string out append value {array:'{"text":"\\u200c","bold":true}'}
 
-# Increment loop run total by 1
+# Subtract from needed runs
 scoreboard players remove $loop.runs_needed rcube_api.centre_string 1
 
 # Loop until meets requirement for times run

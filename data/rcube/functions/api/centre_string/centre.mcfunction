@@ -33,7 +33,7 @@ data modify storage rcube:api/centre_string output set value [{array:'""'}]
 scoreboard players operation $loop.runs_needed rcube_api.centre_string = $px_needed rcube_api.centre_string
 # Addon empty character to disable inheritence
 # Begin loop to append to array
-function rcube:api/centre_string/append
+function rcube:api/centre_string/zprivate/append
 
 
 tellraw @a [{"nbt":"output[].array","storage":"rcube:api/centre_string","interpret":true,"separator":""}," ",{"nbt":"temp.string","storage": "rcube:api/centre_string","interpret":true}]

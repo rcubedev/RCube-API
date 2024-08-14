@@ -4,8 +4,8 @@
 # Called By: rcube:api/load
 
 # Store versions
-data modify storage rcube:api/centre_string version.this set value "0.1.0"
-data modify storage rcube:api/core version.minecraft set value "1.20.1"
+data modify storage rcube:api/centre_string version.this set value "0.1.1"
+data modify storage rcube:api/centre_string version.minecraft set value "1.20.1"
 
 # Data
 scoreboard objectives add rcube_api.centre_string dummy

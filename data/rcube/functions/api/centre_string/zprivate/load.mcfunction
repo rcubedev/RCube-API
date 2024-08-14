@@ -4,14 +4,15 @@
 # Called By: rcube:api/load
 
 # Store versions
-data modify storage rcube:api/centre_string version.this set value "0.2.1"
+data modify storage rcube:api/centre_string version.this set value "0.2.2"
 data modify storage rcube:api/centre_string version.minecraft set value "1.20.1"
 
 # Data
-scoreboard objectives add rcube_api.centre_string dummy
-scoreboard players set $const.char_px rcube_api.centre_string 6
-scoreboard players set $const.chat_width rcube_api.centre_string 320
-scoreboard players set =$num.2 rcube_api.centre_string 2
+scoreboard objectives add rcubeAPI-centre_string dummy
+scoreboard objectives add rcubeAPI-centre_string.const dummy
+scoreboard players set $const.char_px rcubeAPI-centre_string.const 6
+scoreboard players set $const.chat_width rcubeAPI-centre_string.const 320
+scoreboard players set =$num.2 rcubeAPI-centre_string.const 2
 
 # Load message
 execute unless data storage rcube:api/centre_string private.load_message run data modify storage rcube:api/centre_string private.load_message set value true

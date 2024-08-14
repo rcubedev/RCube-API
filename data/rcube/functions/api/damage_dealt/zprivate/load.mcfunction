@@ -26,6 +26,6 @@ scoreboard objectives add rcube_api.damage_dealt-entity.UUID2.pre dummy
 scoreboard objectives add rcube_api.damage_dealt-entity.UUID3.pre dummy
 
 # Load message
-execute unless data storage rcube:api/damage_dealt load_message run data modify storage rcube:api/damage_dealt load_message set value true
+execute unless data storage rcube:api/damage_dealt private.load_message run data modify storage rcube:api/damage_dealt private.load_message set value true
 execute unless data storage rcube:api/damage_dealt {installed:true} run data modify storage rcube:api/damage_dealt installed set value true
-execute if data storage rcube:api/damage_dealt {load_message:true} run tellraw @a [{"text": "[","color": "dark_gray"},{"text": "RCube API","color": "gray"},{"text": "] ","color": "dark_gray"},{"text": "Module ","color" :"gray"},{"text": "'","color": "green"},{"text": "damage_dealt", "color":"green"},{"text": "' ","color": "green"},{"text": "reloaded.","color": "gray"}]
+execute if data storage rcube:api/damage_dealt {private:{load_message:true}} run tellraw @a [{"text": "[","color": "dark_gray"},{"text": "RCube API","color": "gray"},{"text": "] ","color": "dark_gray"},{"text": "Module ","color" :"gray"},{"text": "'","color": "green"},{"text": "damage_dealt", "color":"green"},{"text": "' ","color": "green"},{"text": "reloaded.","color": "gray"}]

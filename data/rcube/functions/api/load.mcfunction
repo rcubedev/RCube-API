@@ -4,7 +4,7 @@
 # Called By: #minecraft:load
 
 # Load modules
-function rcube:api/core/load
+function rcube:api/_core/zprivate/load
 function rcube:api/damage_dealt/load
 function rcube:api/centre_string/load
 function rcube:api/scoreboard_rank/load

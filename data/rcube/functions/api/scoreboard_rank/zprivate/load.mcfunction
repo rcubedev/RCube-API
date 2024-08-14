@@ -4,9 +4,9 @@
 # Called By: rcube:api/load
 
 # Data
-scoreboard objectives add rcube_api.scoreboard_rank.input dummy
-scoreboard objectives add rcube_api.scoreboard_rank.output dummy
-scoreboard objectives add rcube_api.scoreboard_rank.temp dummy
+scoreboard objectives add rcubeAPI_scoreboard_rank.in dummy "[rcube:api/scoreboard_rank] Input Scores"
+scoreboard objectives add rcubeAPI_scoreboard_rank.out dummy "[rcube:api/scoreboard_rank] Ranked Scores"
+scoreboard objectives add rcubeAPI_scoreboard_rank.temp dummy "[rcube:api/scoreboard_rank] Temp Scores (do rank)"
 
 # Load message
 execute unless data storage rcube:api/scoreboard_rank private.load_message run data modify storage rcube:api/scoreboard_rank private.load_message set value true

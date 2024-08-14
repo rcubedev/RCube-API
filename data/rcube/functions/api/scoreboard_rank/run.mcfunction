@@ -15,4 +15,4 @@ scoreboard players reset * rcube_api.scoreboard_rank.input
 scoreboard players set #rank rcube_api.scoreboard_rank.output 1
 
 # Initialise rank; looping
-function rcube:api/scoreboard_rank/rank/init
+function rcube:api/scoreboard_rank/zprivate/rank/init

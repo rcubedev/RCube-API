@@ -4,5 +4,4 @@
 # Called By: #minecraft:tick
 
 # Tick modules
-function rcube:api/damage_dealt/tick
-function rcube:api/centre_string/tick
+function rcube:api/damage_dealt/zprivate/tick

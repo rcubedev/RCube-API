@@ -14,4 +14,4 @@ execute unless entity @s[tag=damage_dealt.entity.check_damage.init] run scoreboa
 tag @s[tag=!damage_dealt.entity.check_damage.init] add damage_dealt.entity.check_damage.init
 
 # Check if damaged
-execute unless score @s rcube_api.damage_dealt-entity.track.health.pre = @s rcube_api.damage_dealt-entity.track.health run function rcube:api/damage_dealt/entity/check_damage/damaged
+execute unless score @s rcube_api.damage_dealt-entity.track.health.pre = @s rcube_api.damage_dealt-entity.track.health run function rcube:api/damage_dealt/zprivate/damaged

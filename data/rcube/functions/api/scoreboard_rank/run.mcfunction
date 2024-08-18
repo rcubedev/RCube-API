@@ -4,7 +4,7 @@
 # Called By: rcube:api/load
 
 # Clear stale data
-data modify storage rcube:api/scoreboard_rank output.done set value false
+data modify storage rcube:api/scoreboard_rank out.done set value false
 scoreboard players reset * rcubeAPI_scoreboard_rank.out
 scoreboard players reset * rcubeAPI_scoreboard_rank.temp
 

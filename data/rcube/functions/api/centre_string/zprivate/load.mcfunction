@@ -4,7 +4,7 @@
 # Called By: rcube:api/load
 
 # Store versions
-data modify storage rcube:api/centre_string version.this set value "0.5.0"
+data modify storage rcube:api/centre_string version.this set value "0.6.0"
 data modify storage rcube:api/centre_string version.minecraft set value "1.20.1"
 
 # Data

@@ -39,7 +39,7 @@ scoreboard players operation $px_needed rcubeAPI_centreString -= $px rcubeAPI_ce
 scoreboard players operation $px_needed rcubeAPI_centreString /= =$num.2 rcubeAPI_centreString.const
 
 # Clear output array
-data modify storage rcube:api/centre_string out set value [{array:'""'}]
+data remove storage rcube:api/centre_string out
 
 # Prepare to loop output onto array
 scoreboard players operation $loop.runs_needed rcubeAPI_centreString = $px_needed rcubeAPI_centreString

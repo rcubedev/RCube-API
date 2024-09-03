@@ -2,7 +2,7 @@
 # Function used to check installed state
 
 # Store versions
-data modify storage rcube:api/player_name version.this set value "0.6.0"
+data modify storage rcube:api/player_name version.this set value "0.6.1"
 data modify storage rcube:api/player_name version.minecraft set value "1.20.1"
 
 # Check deps

@@ -3,8 +3,8 @@
 #
 # Called By: rcube:api/player_name/load
 
-# Init data
-data remove storage rcube:api/player_name dependencies
+# Remove stale data
+data remove storage rcube:api/player_name private.dependencies
 scoreboard players reset * rcubeAPI_playerName.deps
 
 # Module 'core'

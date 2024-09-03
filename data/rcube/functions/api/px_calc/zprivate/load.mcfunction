@@ -7,7 +7,7 @@
 function rcube:api/px_calc/installed
 
 # Data
-scoreboard objectives add rcubeAPI_pxCalc dummy
+scoreboard objectives add rcubeAPI_pxCalc dummy "[rcube:api/px_calc] Data"
 
 # Load message
 execute unless data storage rcube:api/px_calc private.load_message run data modify storage rcube:api/px_calc private.load_message set value true

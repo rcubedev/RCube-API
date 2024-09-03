@@ -3,9 +3,8 @@
 #
 # Called By: rcube:api/load
 
-# Store versions
-data modify storage rcube:api/damage_dealt version.this set value "0.7.0"
-data modify storage rcube:api/damage_dealt version.minecraft set value "1.20.1"
+# Inititalise module
+function rcube:api/damage_dealt/installed
 
 # Data
 scoreboard objectives add rcubeAPI_damageDealt.track.health dummy "[rcube:api/damage_dealt] Health"
@@ -27,5 +26,5 @@ scoreboard objectives add rcubeAPI_damageDealt.UUID3.pre dummy "[rcube:api/damag
 
 # Load message
 execute unless data storage rcube:api/damage_dealt private.load_message run data modify storage rcube:api/damage_dealt private.load_message set value true
-execute unless data storage rcube:api/damage_dealt {installed:true} run data modify storage rcube:api/damage_dealt installed set value true
-execute if data storage rcube:api/damage_dealt {private:{load_message:true}} run tellraw @a [{"text": "[","color": "dark_gray"},{"text": "RCube API","color": "gray"},{"text": "] ","color": "dark_gray"},{"text": "Module ","color" :"gray"},{"text": "'","color": "green"},{"text": "damage_dealt", "color":"green"},{"text": "' ","color": "green"},{"text": "reloaded.","color": "gray"}]
+execute if data storage rcube:api/damage_dealt {private:{load_message:true},installed:true} run tellraw @a ["",{"text": "[","color": "dark_gray"},{"text": "RCube API","color": "gray"},{"text": "] ","color": "dark_gray"},{"text": "Module ","color" :"gray"},{"text": "'","color": "green"},{"text": "damage_dealt", "color":"green"},{"text": "' ","color": "green"},{"text": "reloaded.","color": "gray"}]
+execute if data storage rcube:api/damage_dealt {private:{load_message:true}} unless data storage rcube:api/damage_dealt {installed:true} run tellraw @a ["",{"text": "[","color": "dark_gray"},{"text": "RCube API","color": "gray"},{"text": "] ","color": "dark_gray"},{"text": "Module ","color" :"gray"},{"text": "'","color": "red"},{"text": "damage_dealt", "color":"red"},{"text": "' ","color": "red"},{"text": "failed to load.","color": "gray"}]

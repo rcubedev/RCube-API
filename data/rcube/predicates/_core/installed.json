@@ -1,0 +1,6 @@
+{
+    "condition": "minecraft:value_check",
+    "value": 1,
+    "range": 1
+  }
+  

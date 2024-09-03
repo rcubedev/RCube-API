@@ -7,8 +7,8 @@
 function rcube:api/centre_string/installed
 
 # Data
-scoreboard objectives add rcubeAPI_centreString dummy
-scoreboard objectives add rcubeAPI_centreString.const dummy
+scoreboard objectives add rcubeAPI_centreString dummy "[rcube:api/centre_string] Data"
+scoreboard objectives add rcubeAPI_centreString.const dummy "[rcube:api/centre_string] Constant Data"
 scoreboard players set $const.char_px rcubeAPI_centreString.const 6
 scoreboard players set $const.chat_width rcubeAPI_centreString.const 320
 scoreboard players set =$num.2 rcubeAPI_centreString.const 2

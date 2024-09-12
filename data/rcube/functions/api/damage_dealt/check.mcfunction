@@ -1,7 +1,8 @@
 # Made by: @rcube.
 # Check if damaged
+# In public API to allow summing damage prior to death
 #
-# Called By: rcube:api/damage_dealt/tick
+# Called By: rcube:api/damage_dealt/zprivate/tick
 
 # Store health
 execute store result score @s rcubeAPI_damageDealt.track.health run data get entity @s Health

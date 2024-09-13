@@ -1,9 +1,16 @@
 # Made by @rcube.
 # Function used to check installed state
 
-# Store versions
-data modify storage rcube:api/centre_string version.this set value "0.9.0"
-data modify storage rcube:api/centre_string version.minecraft set value "1.20.1"
+# Store version
+data modify storage rcube:api/centre_string version.this.str set value "0.10.0"
+data modify storage rcube:api/centre_string version.this.major set value 0
+data modify storage rcube:api/centre_string version.this.minor set value 10
+data modify storage rcube:api/centre_string version.this.patch set value 0
+
+# Store game version
+data modify storage rcube:api/centre_string version.game.str set value "1.20.1"
+data modify storage rcube:api/centre_string version.game.major set value 20
+data modify storage rcube:api/centre_string version.game.patch set value 1
 
 # Check deps
 function rcube:api/centre_string/zprivate/deps

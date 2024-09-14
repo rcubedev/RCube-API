@@ -2,9 +2,9 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/damage_dealt version.this.str set value "0.10.0"
+data modify storage rcube:api/damage_dealt version.this.str set value "0.11.0"
 data modify storage rcube:api/damage_dealt version.this.major set value 0
-data modify storage rcube:api/damage_dealt version.this.minor set value 10
+data modify storage rcube:api/damage_dealt version.this.minor set value 11
 data modify storage rcube:api/damage_dealt version.this.patch set value 0
 
 # Store game version

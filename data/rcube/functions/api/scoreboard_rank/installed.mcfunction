@@ -2,9 +2,9 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/scoreboard_rank version.this.str set value "0.5.0"
+data modify storage rcube:api/scoreboard_rank version.this.str set value "0.6.0"
 data modify storage rcube:api/scoreboard_rank version.this.major set value 0
-data modify storage rcube:api/scoreboard_rank version.this.minor set value 5
+data modify storage rcube:api/scoreboard_rank version.this.minor set value 6
 data modify storage rcube:api/scoreboard_rank version.this.patch set value 0
 
 # Store game version

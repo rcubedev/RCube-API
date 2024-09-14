@@ -8,8 +8,8 @@ data remove storage rcube:api/player_name private.dependencies
 scoreboard players reset * rcubeAPI_playerName.deps
 
 # Module 'core'
-execute if predicate rcube:_core/installed run function rcube:api/_core/installed
-execute if predicate rcube:_core/installed if data storage rcube:api/core {installed:true,version:{this:"0.4.0",minecraft:"1.20.1"}} run data modify storage rcube:api/player_name private.dependencies append value {module:"core",installed:true}
+execute if predicate rcube:api/_core/installed run function rcube:api/_core/installed
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true,version:{this:"0.4.0",minecraft:"1.20.1"}} run data modify storage rcube:api/player_name private.dependencies append value {module:"core",installed:true}
 execute unless data storage rcube:api/player_name private.dependencies[{module:"core",installed:true}] run data modify storage rcube:api/player_name private.dependencies append value {module:"core",installed:false,missing:'[{"text":"   - ","color":"dark_gray"},{"text":"Module \'core\'","color":"gray"}]'}
 
 # Check if all dependencies are installed 

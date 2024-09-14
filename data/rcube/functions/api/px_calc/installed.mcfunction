@@ -2,9 +2,9 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/px_calc version.this.str set value "0.4.0"
+data modify storage rcube:api/px_calc version.this.str set value "0.5.0"
 data modify storage rcube:api/px_calc version.this.major set value 0
-data modify storage rcube:api/px_calc version.this.minor set value 4
+data modify storage rcube:api/px_calc version.this.minor set value 5
 data modify storage rcube:api/px_calc version.this.patch set value 0
 
 # Store game version

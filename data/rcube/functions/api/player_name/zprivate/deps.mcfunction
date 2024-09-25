@@ -7,11 +7,22 @@
 data remove storage rcube:api/player_name private.dependencies
 scoreboard players reset * rcubeAPI_playerName.deps
 
+# #####################
 # Module 'core'
+# #####################
+# Store versions
 execute if predicate rcube:api/_core/installed run function rcube:api/_core/installed
-execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true,version:{this:"0.4.0",minecraft:"1.20.1"}} run data modify storage rcube:api/player_name private.dependencies append value {module:"core",installed:true}
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true} store result score $ver.core.major rcubeAPI_playerName.deps run data get storage rcube:api/core version.this.major
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true} store result score $ver.core.minor rcubeAPI_playerName.deps run data get storage rcube:api/core version.this.minor
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true} store result score $ver.core.patch rcubeAPI_playerName.deps run data get storage rcube:api/core version.this.patch
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true} store result score $ver.core.game.major rcubeAPI_playerName.deps run data get storage rcube:api/core version.game.major
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true} store result score $ver.core.game.patch rcubeAPI_playerName.deps run data get storage rcube:api/core version.game.patch
+
+# Set state
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core {installed:true} if score $ver.core.major rcubeAPI_playerName.deps matches 0 if score $ver.core.minor rcubeAPI_playerName.deps matches 6 if score $ver.core.patch rcubeAPI_playerName.deps matches 0 if score $ver.core.game.major rcubeAPI_playerName.deps matches 20 if score $ver.core.game.patch rcubeAPI_playerName.deps matches 1 run data modify storage rcube:api/player_name private.dependencies append value {module:"core",installed:true}
 execute unless data storage rcube:api/player_name private.dependencies[{module:"core",installed:true}] run data modify storage rcube:api/player_name private.dependencies append value {module:"core",installed:false,missing:'[{"text":"   - ","color":"dark_gray"},{"text":"Module \'core\'","color":"gray"}]'}
 
+# #####################
 # Check if all dependencies are installed 
 execute store result score $deps.required rcubeAPI_playerName.deps if data storage rcube:api/player_name private.dependencies[]
 execute store result score $deps.installed rcubeAPI_playerName.deps if data storage rcube:api/player_name private.dependencies[{installed:true}]

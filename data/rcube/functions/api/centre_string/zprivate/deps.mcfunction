@@ -7,11 +7,22 @@
 data remove storage rcube:api/centre_string private.dependencies
 scoreboard players reset * rcubeAPI_centreString.deps
 
+# #####################
 # Module 'px_calc'
+# #####################
+# Store versions
 execute if predicate rcube:api/px_calc/installed run function rcube:api/px_calc/installed
-execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true,version:{this:"0.3.0",minecraft:"1.20.1"}} run data modify storage rcube:api/centre_string private.dependencies append value {module:"px_calc",installed:true}
+execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true} store result score $ver.px_calc.major rcubeAPI_centreString.deps run data get storage rcube:api/px_calc version.this.major
+execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true} store result score $ver.px_calc.minor rcubeAPI_centreString.deps run data get storage rcube:api/px_calc version.this.minor
+execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true} store result score $ver.px_calc.patch rcubeAPI_centreString.deps run data get storage rcube:api/px_calc version.this.patch
+execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true} store result score $ver.px_calc.game.major rcubeAPI_centreString.deps run data get storage rcube:api/px_calc version.game.major
+execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true} store result score $ver.px_calc.game.patch rcubeAPI_centreString.deps run data get storage rcube:api/px_calc version.game.patch
+
+# Set state
+execute if predicate rcube:api/px_calc/installed if data storage rcube:api/px_calc {installed:true} if score $ver.px_calc.major rcubeAPI_centreString.deps matches 0 if score $ver.px_calc.minor rcubeAPI_centreString.deps matches 5 if score $ver.px_calc.patch rcubeAPI_centreString.deps matches 0 if score $ver.px_calc.game.major rcubeAPI_centreString.deps matches 20 if score $ver.px_calc.game.patch rcubeAPI_centreString.deps matches 1 run data modify storage rcube:api/centre_string private.dependencies append value {module:"px_calc",installed:true}
 execute unless data storage rcube:api/centre_string private.dependencies[{module:"px_calc",installed:true}] run data modify storage rcube:api/centre_string private.dependencies append value {module:"px_calc",installed:false,missing:'[{"text":"   - ","color":"dark_gray"},{"text":"Module \'px_calc\'","color":"gray"}]'}
 
+# #####################
 # Check if all dependencies are installed 
 execute store result score $deps.required rcubeAPI_centreString.deps if data storage rcube:api/centre_string private.dependencies[]
 execute store result score $deps.installed rcubeAPI_centreString.deps if data storage rcube:api/centre_string private.dependencies[{installed:true}]

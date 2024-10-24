@@ -4,7 +4,7 @@
 # Called By: rcube:api/centre_text/run
 
 # Append to array
-data modify storage rcube:api/centre_string out append value {array:'{"text":"\\u200c","bold":true}'}
+data modify storage rcube:api/centre_string root.out append value {array:'{"text":"\\u200c","bold":true}'}
 
 # Subtract from needed runs
 scoreboard players remove $loop rcubeAPI_centreString 1

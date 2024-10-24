@@ -15,4 +15,4 @@ execute as @e[scores={rcubeAPI_scoreboardRank.temp=-2147483648..2147483647}] if 
 execute if entity @e[scores={rcubeAPI_scoreboardRank.temp=-2147483648..2147483647}] run function rcube:api/scoreboard_rank/zprivate/rank/init
 
 # If no entities on scoreboard, set ready
-execute unless entity @e[scores={rcubeAPI_scoreboardRank.temp=-2147483648..2147483647}] run data modify storage rcube:api/scoreboard_rank out.done set value true
+execute unless entity @e[scores={rcubeAPI_scoreboardRank.temp=-2147483648..2147483647}] run data modify storage rcube:api/scoreboard_rank root.out.done set value true

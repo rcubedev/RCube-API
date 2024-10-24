@@ -6,6 +6,7 @@
 # Load modules
 function rcube:api/_core/zprivate/load
 function rcube:api/damage_taken/zprivate/load
+function rcube:api/damage_dealt/zprivate/load
 function rcube:api/px_calc/zprivate/load
 function rcube:api/centre_string/zprivate/load
 function rcube:api/scoreboard_rank/zprivate/load

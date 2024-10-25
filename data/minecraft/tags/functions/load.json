@@ -1,5 +1,5 @@
 {
     "values": [
-        "rcube:api/load"
+        "rcube:damage_indicator/load"
     ]
 }

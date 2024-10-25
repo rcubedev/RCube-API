@@ -6,7 +6,6 @@
 # Set tags
 execute on target run tag @s add damage_dealt.private.damaged.temp
 tag @s add damage_dealt.private.attacker.temp
-tag @e[tag=damage_dealt.private.damaged.temp,limit=1] add damage_dealt.out.damaged
 
 # Store UUID of entity attacked and set to attacker
 execute if entity @s[tag=damage_dealt.player.total] store result score @s rcubeAPI_damageDealt.UUID0 run data get entity @e[tag=damage_dealt.private.damaged.temp,limit=1] UUID[0]
@@ -27,9 +26,16 @@ execute if entity @s[tag=damage_dealt.player.total] run scoreboard players opera
 execute if entity @s[tag=damage_dealt.player.total] run scoreboard players operation @s rcubeAPI_damageDealt.UUID2.pre = @s rcubeAPI_damageDealt.UUID2
 execute if entity @s[tag=damage_dealt.player.total] run scoreboard players operation @s rcubeAPI_damageDealt.UUID3.pre = @s rcubeAPI_damageDealt.UUID3
 
-# Remove stale tag
+# Run API functions utilising API
+tag @s add damage_dealt.out.attacker.temp
+tag @e[tag=damage_dealt.private.damaged.temp] add damage_dealt.out.damaged.temp
+function #rcube:api/damage_dealt/run
+
+# Remove stale tags
 tag @e[tag=damage_dealt.private.damaged.temp] remove damage_dealt.private.damaged.temp
 tag @s remove damage_dealt.private.attacker.temp
+tag @e[tag=damage_dealt.out.damaged.temp] remove damage_dealt.out.damaged.temp
+tag @s remove damage_dealt.out.damaged.temp
 
 # Revoke trigger advancement
 advancement revoke @s only rcube:api/damage_dealt/damaged

@@ -1,6 +1,6 @@
 {
   "pack": {
-    "pack_format": 15,
+    "pack_format": 18,
     "description": "RCube API\nAn API created by @rcube."
   }
 }

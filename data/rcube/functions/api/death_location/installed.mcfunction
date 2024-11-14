@@ -2,10 +2,10 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/death_location root.version.this.str set value "0.2.0"
+data modify storage rcube:api/death_location root.version.this.str set value "0.2.1"
 data modify storage rcube:api/death_location root.version.this.major set value 0
 data modify storage rcube:api/death_location root.version.this.minor set value 2
-data modify storage rcube:api/death_location root.version.this.patch set value 0
+data modify storage rcube:api/death_location root.version.this.patch set value 1
 
 # Store game version
 data modify storage rcube:api/death_location root.version.game.str set value "1.20.2"

@@ -3,6 +3,7 @@
 
 # Remove stale data
 data remove storage rcube:api/death_location root.private.LastDeathLocation
+data remove storage rcube:api/death_location root.out
 
 # Copy "LastDeathLocation" to storage
 data modify storage rcube:api/death_location root.private.LastDeathLocation set from entity @s LastDeathLocation

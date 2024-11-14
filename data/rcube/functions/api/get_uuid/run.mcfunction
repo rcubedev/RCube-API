@@ -9,18 +9,18 @@
 # ............................................................................................................
 # This module and all its code is licensed under "The Unlicense"
 # ............................................................................................................
-# Function used to check installed state
+# Convert between the UUID-types
 
-# Store version
-data modify storage rcube:api/get_uuid root.version.this.str set value "0.1.0"
-data modify storage rcube:api/get_uuid root.version.this.major set value 0
-data modify storage rcube:api/get_uuid root.version.this.minor set value 1
-data modify storage rcube:api/get_uuid root.version.this.patch set value 0
+# Remove stale data
+data remove storage rcube:api/get_uuid root.out
+data remove storage rcube:api/get_uuid root.private.temp
 
-# Store game version
-data modify storage rcube:api/get_uuid root.version.game.str set value "1.20.1"
-data modify storage rcube:api/get_uuid root.version.game.major set value 20
-data modify storage rcube:api/get_uuid root.version.game.patch set value 1
+# Move data
+data modify storage rcube:api/get_uuid root.private.temp.data.in set from storage rcube:api/get_uuid root.in.data
+data modify storage rcube:api/get_uuid root.private.temp.type set from storage rcube:api/get_uuid root.in.type
+data remove storage rcube:api/get_uuid root.in
 
-# Set installed state
-execute unless data storage rcube:api/get_uuid root{installed:true} run data modify storage rcube:api/get_uuid root.installed set value true
+# Run conversion function
+execute if data storage rcube:api/get_uuid root{private:{temp:{type:"int-array"}}} run function rcube:api/get_uuid/zprivate/int_to_string
+# TODO - string to int:
+# execute if data storage rcube:api/get_uuid root{private:{temp:{type:"string"}}} run function rcube:api/get_uuid/zprivate/string_to_int

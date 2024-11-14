@@ -9,18 +9,7 @@
 # ............................................................................................................
 # This module and all its code is licensed under "The Unlicense"
 # ............................................................................................................
-# Function used to check installed state
+# Output string
+# Called By: rcube:api/get_uuid/zprivate/int_to_string
 
-# Store version
-data modify storage rcube:api/get_uuid root.version.this.str set value "0.1.0"
-data modify storage rcube:api/get_uuid root.version.this.major set value 0
-data modify storage rcube:api/get_uuid root.version.this.minor set value 1
-data modify storage rcube:api/get_uuid root.version.this.patch set value 0
-
-# Store game version
-data modify storage rcube:api/get_uuid root.version.game.str set value "1.20.1"
-data modify storage rcube:api/get_uuid root.version.game.major set value 20
-data modify storage rcube:api/get_uuid root.version.game.patch set value 1
-
-# Set installed state
-execute unless data storage rcube:api/get_uuid root{installed:true} run data modify storage rcube:api/get_uuid root.installed set value true
+$data modify storage rcube:api/get_uuid root.out set value "$(3)$(2)$(1)$(0)-$(7)$(6)-$(5)$(4)-$(b)$(a)-$(9)$(8)$(f)$(e)$(d)$(c)"

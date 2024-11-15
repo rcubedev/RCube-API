@@ -2,15 +2,15 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/player_name root.version.this.str set value "0.13.0"
+data modify storage rcube:api/player_name root.version.this.str set value "0.14.0"
 data modify storage rcube:api/player_name root.version.this.major set value 0
-data modify storage rcube:api/player_name root.version.this.minor set value 13
+data modify storage rcube:api/player_name root.version.this.minor set value 14
 data modify storage rcube:api/player_name root.version.this.patch set value 0
 
 # Store game version
-data modify storage rcube:api/player_name root.version.game.str set value "1.20.5"
-data modify storage rcube:api/player_name root.version.game.major set value 20
-data modify storage rcube:api/player_name root.version.game.patch set value 5
+data modify storage rcube:api/player_name root.version.game.str set value "1.21.2"
+data modify storage rcube:api/player_name root.version.game.major set value 21
+data modify storage rcube:api/player_name root.version.game.patch set value 2
 
 # Check deps
 function rcube:api/player_name/zprivate/deps

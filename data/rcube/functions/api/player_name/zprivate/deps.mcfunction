@@ -19,7 +19,7 @@ execute if predicate rcube:api/_core/installed if data storage rcube:api/core ro
 execute if predicate rcube:api/_core/installed if data storage rcube:api/core root{installed:true} store result score $ver.core.game.patch rcubeAPI_playerName.deps run data get storage rcube:api/core root.version.game.patch
 
 # Set state
-execute if predicate rcube:api/_core/installed if data storage rcube:api/core root{installed:true} if score $ver.core.major rcubeAPI_playerName.deps matches 0 if score $ver.core.minor rcubeAPI_playerName.deps matches 9 if score $ver.core.patch rcubeAPI_playerName.deps matches 0 if score $ver.core.game.major rcubeAPI_playerName.deps matches 20 if score $ver.core.game.patch rcubeAPI_playerName.deps matches 1 run data modify storage rcube:api/player_name root.private.dependencies append value {module:"core",installed:true}
+execute if predicate rcube:api/_core/installed if data storage rcube:api/core root{installed:true} if score $ver.core.major rcubeAPI_playerName.deps matches 0 if score $ver.core.minor rcubeAPI_playerName.deps matches 10 if score $ver.core.patch rcubeAPI_playerName.deps matches 0 if score $ver.core.game.major rcubeAPI_playerName.deps matches 20 if score $ver.core.game.patch rcubeAPI_playerName.deps matches 5 run data modify storage rcube:api/player_name root.private.dependencies append value {module:"core",installed:true}
 execute unless data storage rcube:api/player_name root.private.dependencies[{module:"core",installed:true}] run data modify storage rcube:api/player_name root.private.dependencies append value {module:"core",installed:false,missing:'[{"text":"   - ","color":"dark_gray"},{"text":"Module \'core\'","color":"gray"}]'}
 
 # #####################

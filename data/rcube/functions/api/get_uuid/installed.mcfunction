@@ -12,9 +12,9 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/get_uuid root.version.this.str set value "0.2.0"
+data modify storage rcube:api/get_uuid root.version.this.str set value "0.3.0"
 data modify storage rcube:api/get_uuid root.version.this.major set value 0
-data modify storage rcube:api/get_uuid root.version.this.minor set value 2
+data modify storage rcube:api/get_uuid root.version.this.minor set value 3
 data modify storage rcube:api/get_uuid root.version.this.patch set value 0
 
 # Store game version

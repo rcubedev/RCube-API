@@ -5,3 +5,6 @@
 
 # Tick modules
 function rcube:api/damage_taken/zprivate/tick
+
+# Loop tick
+schedule function rcube:dragon_rework/tick 1t replace

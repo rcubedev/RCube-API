@@ -13,3 +13,7 @@ function rcube:api/get_uuid/zprivate/load
 function rcube:api/player_name/zprivate/load
 function rcube:api/px_calc/zprivate/load
 function rcube:api/scoreboard_rank/zprivate/load
+
+# Run tick
+schedule clear rcube:dragon_rework/tick
+schedule function rcube:dragon_rework/tick 1t replace

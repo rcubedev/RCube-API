@@ -4,7 +4,7 @@
 # Called By: rcube:api/centre_string/installed
 
 # Remove stale data
-data remove storage rcube:api/centre_string private.dependencies
+data remove storage rcube:api/centre_string root.private.dependencies
 scoreboard players reset * rcubeAPI_centreString.deps
 
 # #####################

@@ -5,7 +5,7 @@
 
 # Set tags
 tag @s add damage_taken.private.damaged.temp
-execute as @e[tag=damage_taken.private.attacker.temp,limit=1] run tag @s add damage_taken.private.attacker.temp
+execute on attacker run tag @s add damage_taken.private.attacker.temp
 tag @s add damage_taken.out.damaged
 
 # Store UUID of entity attacked and set to attacker

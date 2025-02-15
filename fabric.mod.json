@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "rcube-api",
+  "version": "0.0.0",
+  "name": "RCube API",
+  "description": "A dependency used by RCube / CubedNetwork.",
+  "authors": [
+    "rcubedev"
+  ],
+  "contact": {
+    "sources": "https://github.com/rcubedev/RCube-API",
+    "issues": "https://github.com/rcubedev/RCube-API/issues"
+  },
+  "license": "GPL-3.0-only",
+  "environment": "*",
+  "depends": {
+    "fabric-resource-loader-v0": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/ukAtJUA7RU"
+      }
+    }
+  }
+}

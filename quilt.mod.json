@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "au.rcube",
+    "id": "rcube-api",
+    "version": "0.0.0",
+    "metadata": {
+      "name": "RCube API",
+      "description": "A dependency used by RCube / CubedNetwork.",
+      "contributors": {
+        "rcubedev": "Owner"
+      },
+      "contact": {
+        "sources": "https://github.com/rcubedev/RCube-API",
+        "issues": "https://github.com/rcubedev/RCube-API/issues"
+      },
+      "license": {
+        "name": "GNU General Public License v3.0",
+        "id": "GPL-3.0-only",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.en.html"
+      }
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "depends": [
+      {
+        "id": "quilt_resource_loader",
+        "versions": "*",
+        "unless": "fabric-resource-loader-v0"
+      }
+    ]
+  }
+}

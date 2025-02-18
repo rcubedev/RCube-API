@@ -2,10 +2,10 @@
 # Function used to check installed state
 
 # Store version
-data modify storage rcube:api/player_name root.version.this.str set value "0.15.1"
+data modify storage rcube:api/player_name root.version.this.str set value "0.15.2"
 data modify storage rcube:api/player_name root.version.this.major set value 0
 data modify storage rcube:api/player_name root.version.this.minor set value 15
-data modify storage rcube:api/player_name root.version.this.patch set value 1
+data modify storage rcube:api/player_name root.version.this.patch set value 2
 
 # Store game version
 data modify storage rcube:api/player_name root.version.game.str set value "1.20.1"

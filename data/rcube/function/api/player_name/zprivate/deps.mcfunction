@@ -3,6 +3,10 @@
 #
 # Called By: rcube:api/player_name/load
 
+# If scoreboard doesn't exist, create it
+# (This occurs if the dependent project loads before this module- the scoreboard is created after ONLY IF FIRST LOAD)
+scoreboard objectives add rcubeAPI_playerName.deps dummy "[rcube:api/player_name] Dependencies"
+
 # Remove stale data
 data remove storage rcube:api/player_name root.private.dependencies
 scoreboard players reset * rcubeAPI_playerName.deps

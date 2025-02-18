@@ -3,6 +3,10 @@
 #
 # Called By: rcube:api/centre_string/installed
 
+# If scoreboard doesn't exist, create it
+# (This occurs if the dependent project loads before this module- the scoreboard is created after ONLY IF FIRST LOAD)
+scoreboard objectives add rcubeAPI_centreString.deps dummy "[rcube:api/centre_string] Dependencies"
+
 # Remove stale data
 data remove storage rcube:api/centre_string root.private.dependencies
 scoreboard players reset * rcubeAPI_centreString.deps

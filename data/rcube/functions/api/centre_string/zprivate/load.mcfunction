@@ -3,15 +3,15 @@
 #
 # Called By: rcube:api/load
 
-# Inititalise module
-function rcube:api/centre_string/installed
-
 # Data
 scoreboard objectives add rcubeAPI_centreString dummy "[rcube:api/centre_string] Data"
 scoreboard objectives add rcubeAPI_centreString.const dummy "[rcube:api/centre_string] Constant Data"
 scoreboard objectives add rcubeAPI_centreString.deps dummy "[rcube:api/centre_string] Dependencies"
 scoreboard players set $const.chat_width rcubeAPI_centreString.const 320
 scoreboard players set =$num.2 rcubeAPI_centreString.const 2
+
+# Inititalise module
+function rcube:api/centre_string/installed
 
 # Load message
 execute unless data storage rcube:api/centre_string root.private.load_message run data modify storage rcube:api/centre_string root.private.load_message set value true

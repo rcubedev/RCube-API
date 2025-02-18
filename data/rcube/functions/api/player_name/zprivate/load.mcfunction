@@ -3,11 +3,11 @@
 #
 # Called By: rcube:api/load
 
-# Inititalise module
-function rcube:api/player_name/installed
-
 # Data
 scoreboard objectives add rcubeAPI_playerName.deps dummy "[rcube:api/player_name] Dependencies"
+
+# Inititalise module
+function rcube:api/player_name/installed
 
 # Load message
 execute unless data storage rcube:api/player_name root.private.load_message run data modify storage rcube:api/player_name root.private.load_message set value true
